@@ -131,7 +131,7 @@ int f81866d_open()
 	//Here we check whether the program is running on Aaeon boards
         //if(w83697ug_enter_conf()<0 || aaeon_check_protection()<0)
 	if(f81866d_enter_conf()<0 || aaeon_check_protection()<0)
-	  return -1;
+	  return 0;
 	superio_select(0x06);      //set device ldn 6
 	/* set device active */
     	outb(0x30, SIO_BASE);
